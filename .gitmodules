@@ -1,9 +1,9 @@
-[submodule "analytics-stack/analytics-stack/apps/Next-js-Boilerplate"]
-	path = analytics-stack/analytics-stack/apps/Next-js-Boilerplate
+[submodule "analytics-stack/apps/Next-js-Boilerplate"]
+	path = analytics-stack/apps/Next-js-Boilerplate
 	url = https://github.com/ixartz/Next-js-Boilerplate.git
-[submodule "analytics-stack/analytics-stack/apps/dub"]
-	path = analytics-stack/analytics-stack/apps/dub
+[submodule "analytics-stack/apps/dub"]
+	path = analytics-stack/apps/dub
 	url = https://github.com/dubinc/dub.git
-[submodule "analytics-stack/analytics-stack/apps/umami"]
-	path = analytics-stack/analytics-stack/apps/umami
+[submodule "analytics-stack/apps/umami"]
+	path = analytics-stack/apps/umami
 	url = https://github.com/umami-software/umami.git
