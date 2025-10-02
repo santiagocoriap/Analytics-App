@@ -1,0 +1,22 @@
+{
+  "name": "analytics-stack",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Modular analytics SaaS monorepo orchestrating frontend, Umami, and Dub apps.",
+  "scripts": {
+    "dev:frontend": "npm run dev --prefix apps/Next-js-Boilerplate",
+    "dev:umami": "pnpm --dir apps/umami dev",
+    "dev:dub": "pnpm --dir apps/dub dev",
+    "dev": "concurrently -k -p \"[{name}]\" -n frontend,umami,dub -c \"blue.bold,green.bold,magenta.bold\" \"npm run dev:frontend\" \"npm run dev:umami\" \"npm run dev:dub\"",
+    "install:frontend": "npm install --prefix apps/Next-js-Boilerplate",
+    "install:umami": "pnpm install --dir apps/umami",
+    "install:dub": "pnpm install --dir apps/dub",
+    "install:all": "npm run install:frontend && npm run install:umami && npm run install:dub"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
