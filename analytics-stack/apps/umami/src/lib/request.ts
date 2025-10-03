@@ -3,6 +3,7 @@ import { FILTER_COLUMNS, FILTER_GROUPS } from '@/lib/constants';
 import { badRequest, unauthorized } from '@/lib/response';
 import { getAllowedUnits, getMinimumUnit } from '@/lib/date';
 import { checkAuth } from '@/lib/auth';
+import { resolveClerkAuth } from '@/lib/clerkAuth';
 import { getWebsiteSegment, getWebsiteDateRange } from '@/queries';
 
 export async function getJsonBody(request: Request) {
@@ -47,7 +48,7 @@ export async function parseRequest(
   }
 
   if (!options?.skipAuth && !error) {
-    auth = await checkAuth(request);
+    auth = (await resolveClerkAuth()) ?? (await checkAuth(request));
 
     if (!auth) {
       error = () => unauthorized();
@@ -110,3 +111,4 @@ export async function getRequestFilters(query: Record<string, any>, websiteId?: 
 
   return result;
 }
+
